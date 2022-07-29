@@ -12,7 +12,9 @@ app.use(express.json());
 
 app.use(logger("dev"));
 
-app.use(cors());
+app.use(cors({ credentials: true, origin: true }));
+
+app.options("*", cors());
 
 app.use("/api", routes);
 

@@ -8,16 +8,14 @@ router.get("/booking", controllers.getBooking);
 
 router.get("/cabana", controllers.getCabana);
 
-router.post("/create-booking", controllers.createBooking);
+router.post("/booking", controllers.createBooking);
 
-router.post("/create-cabana", controllers.createCabana);
+router.post("/cabana", controllers.createCabana);
 
-router.post("/update-booking", controllers.updateBooking);
+router.post("/booking", controllers.updateBooking);
 
-router.post("/update-booking/:id", controllers.updateBooking);
+router.post("/booking/:id", controllers.updateBooking);
 
-router.delete("/delete-booking", controllers.deleteBooking);
-
-router.delete("/delete-booking/:id", controllers.deleteBooking);
+router.delete("/booking/:id", controllers.deleteBooking);
 
 module.exports = router;

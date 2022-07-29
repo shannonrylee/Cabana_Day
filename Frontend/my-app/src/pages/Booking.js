@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const bookings = () => {
+const Bookings = () => {
   const [booking, setBooking] = useState([]);
   const initialState = {
     name: "",
     date: "",
   };
-  const [fromState, setFormState] = useState(initialState);
+  const [formState, setFormState] = useState(initialState);
   const [submitted, setSubmitted] = useState(true);
 
   useEffect(() => {
@@ -25,5 +25,48 @@ const bookings = () => {
     };
     getBooking();
   }, [submitted]);
+
+  const handlechange = (e) => {
+    setFormState({ ...formState, [e.target.id]: e.target.value });
+  };
+  const handlesubmit = async (e) => {
+    e.preventDefault();
+    let res = await axios.post("http://localhost:3001/api/booking", formState);
+    console.log(res.data.bookings);
+    console.log(formState);
+    setFormState(initialState);
+    setSubmitted(true);
+    e.target.reset();
+  };
+  return (
+    <div>
+      <h1>Current Bookings</h1>
+      <form onSubmit={handlesubmit}>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          onChange={handlechange}
+          value={formState.subject}
+        />
+        <label htmlFor="date">Date:</label>
+        <input
+          type="text"
+          id="date"
+          onChange={handlechange}
+          value={formState.subject}
+        />
+        <button type="sumbit">Submit</button>
+      </form>
+      <div>
+        {booking.map((bookings) => (
+          <div>
+            <h1>{bookings.name}</h1>
+            <h1>{bookings.date}</h1>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
-export default bookings;
+export default Bookings;

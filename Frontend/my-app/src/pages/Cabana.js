@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import CabanaCard from "../components/CabanaCard";
 
-const viewCabanas = () => {
-  //   const [x] = useState([]);
+const ViewCabanas = () => {
   const [cabana, setCabana] = useState([]);
 
   useEffect(() => {
@@ -26,4 +25,4 @@ const viewCabanas = () => {
     </div>
   );
 };
-export default viewCabanas;
+export default ViewCabanas;

@@ -38,6 +38,7 @@ const Bookings = () => {
     setSubmitted(true);
     e.target.reset();
   };
+
   return (
     <div>
       <h1>Current Bookings</h1>
@@ -66,6 +67,14 @@ const Bookings = () => {
           </div>
         ))}
       </div>
+      <label hmtlFor="delete"></label>
+      <input
+        type="button"
+        id="bookings"
+        onChange={handlechange}
+        value={formState.bookings}
+      />
+      <button>Checkout</button>
     </div>
   );
 };

@@ -10,7 +10,6 @@ const Home = () => {
           <h1>Cabana Day</h1>
           <h2>
             Rent a local mini vacay with daily cabanas of all types!
-            {/* <button onClick="booking">Book Today!</button> */}
           </h2>
         </div>
         <div>

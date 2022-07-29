@@ -8,6 +8,7 @@ const Nav = () => {
       </h4>
       <div>
         <Link to="/cabanas">Cabana List</Link>
+        <Link to="/booking">Book Today!</Link>
       </div>
     </nav>
   )

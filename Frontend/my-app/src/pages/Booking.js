@@ -40,8 +40,8 @@ const Bookings = () => {
   };
 
   return (
-    <div>
-      <h1>Current Bookings</h1>
+    <div className="form">
+      <h1 className="forms">Current Bookings</h1>
       <form onSubmit={handlesubmit}>
         <label htmlFor="name">Name:</label>
         <input
@@ -50,31 +50,24 @@ const Bookings = () => {
           onChange={handlechange}
           value={formState.subject}
         />
-        <label htmlFor="date">Date:</label>
+        <br></br>
+        <label className="date">Date:</label>
         <input
           type="text"
           id="date"
           onChange={handlechange}
           value={formState.subject}
         />
-        <button type="sumbit">Submit</button>
+        <button type="submit">Submit</button>
       </form>
-      <div>
+      <div className="results">
         {booking.map((bookings) => (
           <div>
-            <h1>{bookings.name}</h1>
-            <h1>{bookings.date}</h1>
+            <h1 className="booking">{bookings.name}</h1>
+            <h1 className="booking">{bookings.date}</h1>
           </div>
         ))}
       </div>
-      <label hmtlFor="delete"></label>
-      <input
-        type="button"
-        id="bookings"
-        onChange={handlechange}
-        value={formState.bookings}
-      />
-      <button>Checkout</button>
     </div>
   );
 };

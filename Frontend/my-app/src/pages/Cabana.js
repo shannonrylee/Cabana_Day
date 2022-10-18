@@ -13,10 +13,9 @@ const ViewCabanas = () => {
   }, []);
 
   return (
-    <div>
+    <div className="types">
       {cabana.map((cabanas) => (
         <CabanaCard
-          location={cabanas.location}
           types={cabanas.types}
           price={cabanas.price}
           image={cabanas.image}

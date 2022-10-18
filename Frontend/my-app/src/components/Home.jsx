@@ -9,7 +9,7 @@ const Home = () => {
         <div>
           <h1>Cabana Day</h1>
           <h2>
-            Rent a local mini vacay with daily cabanas of all types!
+            Rent a mini local vacay with daily cabanas of all types!
           </h2>
         </div>
         <div>
